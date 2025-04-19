@@ -5,9 +5,4 @@ class Solution(object):
         :type needle: str
         :rtype: int
         """
-        if needle not in haystack:
-            return -1
-        for i in range(len(haystack)):
-            if haystack[i : i + len(needle)] == needle:
-                return i
-        return -1
+        return haystack.find(needle)
