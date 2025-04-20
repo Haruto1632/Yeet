@@ -1,13 +1,13 @@
 class Solution(object):
-    import math
     def divide(self, dividend, divisor):
-        if dividend >= 0 and divisor > 0:
-            q = dividend / divisor
-            return q
-        elif dividend <= 0 and divisor < 0:
-            q = abs(dividend) / abs(divisor)
-            return q
+        max = 2**31 - 1
+        min = -2**31
+        
+        if dividend == min and divisor == -1:
+            return max
+        elif dividend * divisor < 0:
+            q = abs(dividend) // abs(divisor)
+            return -q
         else:
-            q = abs(dividend) / abs(divisor)
-            q = -q
+            q = abs(dividend) // abs(divisor)
             return q
